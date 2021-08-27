@@ -44,6 +44,12 @@ class machine
 		
 		$item["isRed"]=$this->client->get($item["cnc1"]."/redFlash");
 		
+		$item["finished_time"]=$this->client->get($item["cnc1"]."/finished_time");
+		
+		$item["ct_time"]=$this->client->get($item["cnc1"]."/ct_time");
+		
+		$item["countdown"]=$this->client->get($item["cnc1"]."/countdown");
+		
 		$bits = unpack("C4",$this->client->get($item["cnc1"]."/io_read"));
 
 		$item["io_read"]=$this->fromate32($bits);
